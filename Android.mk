@@ -8,6 +8,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13
 LOCAL_STATIC_JAVA_LIBRARIES += android-ex-camera2-portability
 LOCAL_STATIC_JAVA_LIBRARIES += xmp_toolkit
 LOCAL_STATIC_JAVA_LIBRARIES += glide
+LOCAL_STATIC_JAVA_LIBRARIES += guava
+LOCAL_STATIC_JAVA_LIBRARIES += jsr305
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_SRC_FILES += $(call all-java-files-under, src_pd)
@@ -31,10 +33,11 @@ LOCAL_AAPT_FLAGS := \
         --version-code $(version_code_package) \
 
 LOCAL_PACKAGE_NAME := Camera2
-
 LOCAL_CERTIFICATE := platform
 
 #LOCAL_SDK_VERSION := current
+
+LOCAL_PROGUARD_ENABLED := disabled
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
